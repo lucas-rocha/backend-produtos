@@ -33,6 +33,20 @@ exports.SelectAll = (req, res, next) => {
     .catch(error => next(error));
 };
 
+exports.SelectById = (req, res, next) => {
+  const id = req.params.id;
+
+  Produto.findByPk(id)
+    .then(produto => {
+      if(produto) {
+        res.status(status.OK).send(produto);
+      } else {
+        res.status(status.NOT_FOUND).send();
+      }
+    })
+    .catch(error => next(error));
+};
+
 // exports.Update = (req, res, next) => {
 
 // };
