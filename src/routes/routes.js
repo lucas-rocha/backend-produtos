@@ -6,5 +6,6 @@ router.post('/produto', ProdutoController.Insert);
 router.get('/produto', ProdutoController.SelectAll);
 router.get('/produto/:id', ProdutoController.SelectById);
 router.put('/produto/:id', ProdutoController.Update);
+router.delete('/produto/:id', ProdutoController.Delete);
 
 module.exports = router;
