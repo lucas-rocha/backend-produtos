@@ -22,3 +22,17 @@ exports.Insert = (req, res, next) => {
   })
   .catch(error => next(error));
 };
+
+exports.SelectAll = (req, res, next) => {
+  Produto.findAll()
+    .then(produto => {
+      if(produto) {
+        res.status(status.OK).send(produto);
+      }
+    })
+    .catch(error => next(error));
+};
+
+// exports.Update = (req, res, next) => {
+
+// };
